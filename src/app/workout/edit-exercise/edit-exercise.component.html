@@ -1,0 +1,36 @@
+<h1>Add New Exercise</h1>
+
+<div class="row border">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div class="row">
+        <div class="col-md-12 form-group">
+
+          <label for="name">Enter Name</label>
+          <input type="text" id="name" class="form-control"
+          name="name"
+          ngModel
+          required>
+
+          <label for="desc">Enter Description</label>
+          <textarea rows="3" type="text" id="desc" class="form-control"
+          placeholder="Enter a description here."
+          name="desc"
+          ngModel
+          required></textarea>
+
+          <hr />
+          <button class="btn btn-success" type="submit"
+          [disabled]="!form.valid">Make change</button>
+          <button class="btn btn-primary" type="button"
+          (click)="reset(form)">
+          Reset
+          </button>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<button (click)="onHome()" class="btn btn-success">Home</button>

@@ -1,0 +1,15 @@
+<h1> {{ category }} chosen</h1>
+
+<div *ngFor="let exercise of exerciseList; let i = index">
+  <button (click)="onSetExercise(i)" class="btn btn-success">{{ exerciseList[i].name }}</button>
+</div>
+
+<button (click)="onHome()" class="btn btn-success">Home</button>
+
+<div *ngIf="show">
+<h3>{{ exerciseList[index].name }}</h3>
+<h3>{{ exerciseList[index].desc }}</h3>
+<div *ngIf="isCustom">
+  <button class="btn btn-info" (click)="onEdit()">Edit</button>
+</div>
+</div>
